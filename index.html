@@ -3,232 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stars &amp; Stripes Canvas — Fireworks Over the Harbor</title>
-  <meta name="description" content="An interactive CSS-only Independence Day storybook: Fireworks Over the Harbor." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
-
+  <title>Fireworks Over the Harbor</title>
   <link rel="stylesheet" href="stars-and-stripes.css" />
 </head>
 <body>
 
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="top-bar">
+    <a href="#page1" class="logo">★ Stars & Stripes Canvas</a>
 
-  <!-- ===================== SITE HEADER / STICKY NAV ===================== -->
-  <header class="site-header">
-    <div class="brand">
-      <span class="brand__mark" aria-hidden="true">⭐</span>
-      <span class="brand__name">Stars &amp; Stripes Canvas</span>
-    </div>
-    <nav class="site-nav" aria-label="Storybook chapters">
-      <a class="nav-link" data-page="dawn" href="#dawn">Freedom&rsquo;s Dawn</a>
-      <a class="nav-link" data-page="plaza" href="#plaza">Patriot&rsquo;s Plaza</a>
-      <a class="nav-link" data-page="united" href="#united">United We Stand</a>
+    <nav>
+      <a href="#page1" aria-label="Go to Freedom's Dawn">01</a>
+      <a href="#page2" aria-label="Go to Patriot's Plaza">02</a>
+      <a href="#page3" aria-label="Go to United We Stand">03</a>
     </nav>
   </header>
 
-  <main id="main-content">
+  <main class="storybook">
 
-    <!-- ===================== PAGE 1 — FREEDOM'S DAWN ===================== -->
-    <section id="dawn" class="page page--dawn">
+    <section id="page1" class="scene dawn">
+      <video class="bg-video" autoplay muted loop playsinline>
+        <source src="assets/images/fireworks.mp4" type="video/mp4" />
+      </video>
 
-      <div class="hero">
-        <p class="hero__eyebrow">Chapter One</p>
-        <h1 class="hero__title">Before the Sky Lights&nbsp;Up</h1>
-        <p class="hero__subtitle">An Independence Day storybook, told in light over water.</p>
-      </div>
+      <div class="dark-overlay"></div>
+      <div class="stars"></div>
+      <div class="flag"></div>
+      <div class="water"></div>
+      <div class="boat boat-one"></div>
+      <div class="crowd"></div>
 
-      <div class="content-wrap">
-        <p class="lede">
-          Dusk settles slow over the little harbor town. Lanterns blink on along the
-          boardwalk, the brass band tunes up somewhere near the pier, and a hundred
-          folding chairs face the water — all of them empty, all of them waiting.
-          Tonight the whole town will gather to watch the sky answer the sea.
-        </p>
-
-        <div class="card-grid">
-          <article class="info-card">
-            <h2 class="info-card__title">The Boardwalk</h2>
-            <p>Strings of bulb lights flicker on one by one as the sun drops behind the breakwater.</p>
-          </article>
-          <article class="info-card">
-            <h2 class="info-card__title">The Harbor</h2>
-            <p>A dozen boats sit anchored and quiet, masts swaying gently, waiting for the first burst overhead.</p>
-          </article>
-          <article class="info-card">
-            <h2 class="info-card__title">The Town</h2>
-            <p>Families spread blankets on the grass while gulls wheel once more before settling for the night.</p>
-          </article>
-        </div>
-
-        <nav class="page-nav page-nav--end" aria-label="Storybook navigation">
-          <a class="page-nav__link page-nav__link--next" href="#plaza">Walk to the Harbor <span aria-hidden="true">→</span></a>
-        </nav>
+      <div class="scene-title left-title">
+        <span>01</span>
+        <h1>Freedom’s Dawn</h1>
+        <a href="#page2">Begin ★</a>
       </div>
     </section>
 
-    <!-- ===================== PAGE 2 — PATRIOT'S PLAZA (HARBOR SCENE) ===================== -->
-    <section id="plaza" class="page page--plaza">
+    <section id="page2" class="scene plaza">
+      <video class="bg-video" autoplay muted loop playsinline>
+        <source src="assets/images/fireworks.mp4" type="video/mp4" />
+      </video>
 
-      <div class="hero hero--scene">
-        <p class="hero__eyebrow hero__eyebrow--light">Chapter Two</p>
-        <h1 class="hero__title hero__title--light">Fireworks Over the Harbor</h1>
-        <p class="hero__subtitle hero__subtitle--light">Patriot&rsquo;s Plaza, where the whole town watches the water catch fire.</p>
-      </div>
+      <div class="dark-overlay"></div>
+      <div class="stars"></div>
 
-      <!-- ============ THE ANIMATED HARBOR SCENE ============ -->
-      <div class="harbor-scene" role="img" aria-label="Animated night scene of fireworks bursting over a harbor, with a glowing city skyline, anchored boats, a crowd on the dock, and gulls flying overhead">
+      <div class="smoke smoke-one"></div>
+      <div class="smoke smoke-two"></div>
 
-        <!-- sky / stars / clouds -->
-        <div class="sky" aria-hidden="true">
-          <div class="stars stars--far"></div>
-          <div class="stars stars--near"></div>
-          <span class="haze haze--1"></span>
-          <span class="haze haze--2"></span>
-        </div>
+      <div class="skyline"></div>
+      <div class="water reflection-water"></div>
 
-        <!-- gulls -->
-        <span class="gull gull--1" aria-hidden="true"></span>
-        <span class="gull gull--2" aria-hidden="true"></span>
-        <span class="gull gull--3" aria-hidden="true"></span>
+      <div class="boat boat-two"></div>
+      <div class="boat boat-three"></div>
 
-        <!-- city skyline -->
-        <div class="skyline" aria-hidden="true">
-          <span class="building b1"></span>
-          <span class="building b2"></span>
-          <span class="building b3"></span>
-          <span class="building b4"></span>
-          <span class="building b5"></span>
-          <span class="building b6"></span>
-          <span class="building b7"></span>
-        </div>
+      <div class="crowd dancing"></div>
 
-        <!-- smoke drifting near the burst points -->
-        <span class="smoke smoke--1" aria-hidden="true"></span>
-        <span class="smoke smoke--2" aria-hidden="true"></span>
-        <span class="smoke smoke--3" aria-hidden="true"></span>
-
-        <!-- fireworks -->
-        <div class="firework firework--gold" style="--x:18%;" aria-hidden="true">
-          <span class="trail"></span><span class="burst"></span>
-        </div>
-        <div class="firework firework--red" style="--x:50%;" aria-hidden="true">
-          <span class="trail"></span><span class="burst"></span>
-        </div>
-        <div class="firework firework--blue" style="--x:78%;" aria-hidden="true">
-          <span class="trail"></span><span class="burst"></span>
-        </div>
-
-        <!-- water + reflection -->
-        <div class="water" aria-hidden="true">
-          <span class="reflection reflection--gold"></span>
-          <span class="reflection reflection--red"></span>
-          <span class="reflection reflection--blue"></span>
-        </div>
-
-        <!-- boats -->
-        <span class="boat boat--1" aria-hidden="true"><span class="boat__mast"></span></span>
-        <span class="boat boat--2" aria-hidden="true"><span class="boat__mast"></span></span>
-
-        <!-- crowd on the dock -->
-        <div class="crowd" aria-hidden="true">
-          <span class="person"></span><span class="person person--tall"></span><span class="person"></span>
-          <span class="person person--small"></span><span class="person"></span><span class="person person--tall"></span>
-          <span class="person"></span><span class="person person--small"></span><span class="person"></span>
-          <span class="person person--tall"></span><span class="person"></span><span class="person"></span>
-        </div>
-
-        <!-- encore interactivity -->
-        <input type="checkbox" id="encore-toggle" class="visually-hidden" />
-        <label for="encore-toggle" class="encore-button">🎆 Launch an Encore Firework</label>
-        <div class="firework firework--encore" style="--x:50%;" aria-hidden="true">
-          <span class="burst"></span>
-        </div>
-      </div>
-
-      <div class="content-wrap">
-        <p class="lede">
-          Every burst lands a half-second before its echo rolls back off the water.
-          For one night a year, the whole plaza looks up at exactly the same moment —
-          neighbors, strangers, the harbormaster, the dogs in flag bandanas — all of
-          them caught in the same red, then gold, then blue.
-        </p>
-
-        <h2 class="section-title">Did You Know?</h2>
-        <div class="card-grid">
-          <article class="info-card">
-            <h3 class="info-card__title">Color Takes Chemistry</h3>
-            <p>Firework colors come from metal salts — strontium for red, sodium for gold, copper for the harbor&rsquo;s blue.</p>
-          </article>
-          <article class="info-card">
-            <h3 class="info-card__title">Sound Lags Behind</h3>
-            <p>Light from a burst reaches you almost instantly; the boom takes about a second for every 340&nbsp;meters of distance.</p>
-          </article>
-          <article class="info-card">
-            <h3 class="info-card__title">A Harbor Tradition</h3>
-            <p>Waterfront fireworks displays use the water as a mirror, doubling every burst for the crowd on shore.</p>
-          </article>
-        </div>
-
-        <nav class="page-nav" aria-label="Storybook navigation">
-          <a class="page-nav__link page-nav__link--prev" href="#dawn"><span aria-hidden="true">←</span> Freedom&rsquo;s Dawn</a>
-          <a class="page-nav__link page-nav__link--next" href="#united">United We Stand <span aria-hidden="true">→</span></a>
-        </nav>
+      <div class="scene-title center-title">
+        <span>02</span>
+        <h1>Patriot’s Plaza</h1>
+        <a href="#page3">Next ★</a>
       </div>
     </section>
 
-    <!-- ===================== PAGE 3 — UNITED WE STAND ===================== -->
-    <section id="united" class="page page--united">
+    <section id="page3" class="scene unity">
+      <video class="bg-video" autoplay muted loop playsinline>
+        <source src="assets/images/fireworks.mp4" type="video/mp4" />
+      </video>
 
-      <div class="hero">
-        <p class="hero__eyebrow">Chapter Three</p>
-        <h1 class="hero__title">United We Stand</h1>
-        <p class="hero__subtitle">The last burst fades, but the harbor remembers the light.</p>
+      <div class="dark-overlay"></div>
+      <div class="stars"></div>
+      <div class="flag-bg"></div>
+      <div class="sparklers"></div>
+      <div class="crowd dancing"></div>
+
+      <div class="scene-title right-title">
+        <span>03</span>
+        <h1>United We Stand</h1>
+        <a href="#page1">Restart ★</a>
       </div>
 
-      <div class="content-wrap">
-        <p class="lede">
-          The smoke clears slow over the water. Chairs fold up, blankets get shaken
-          out, and the crowd drifts home still talking about the gold one that
-          split into a hundred more. The harbor goes quiet again — until next year,
-          when the whole town gathers to do it all over.
-        </p>
-
-        <div class="card-grid">
-          <article class="info-card">
-            <h2 class="info-card__title">One Town</h2>
-            <p>Every age, every block, the same dock rail to lean on and the same sky to watch.</p>
-          </article>
-          <article class="info-card">
-            <h2 class="info-card__title">One Sky</h2>
-            <p>For a few minutes, every face in the plaza points the same direction.</p>
-          </article>
-          <article class="info-card">
-            <h2 class="info-card__title">One Story</h2>
-            <p>Told in light, water, and the particular hush right before the first burst.</p>
-          </article>
-        </div>
-
-        <nav class="page-nav" aria-label="Storybook navigation">
-          <a class="page-nav__link page-nav__link--prev" href="#plaza"><span aria-hidden="true">←</span> Patriot&rsquo;s Plaza</a>
-          <a class="page-nav__link page-nav__link--next" href="#dawn">Watch It Again <span aria-hidden="true">↻</span></a>
-        </nav>
-      </div>
+      <footer>
+        Built with HTML & CSS only
+      </footer>
     </section>
 
   </main>
-
-  <!-- ===================== SITE FOOTER ===================== -->
-  <footer class="site-footer">
-    <p class="site-footer__statement">&ldquo;Freedom is the most powerful creative force.&rdquo;</p>
-    <p class="site-footer__credits">
-      Stars &amp; Stripes Canvas — Fireworks Over the Harbor · Built by
-      <span class="credit-name">[Your Name]</span> &amp; <span class="credit-name">[Partner Name]</span>
-      · HTML &amp; CSS only, no JavaScript
-    </p>
-  </footer>
 
 </body>
 </html>
