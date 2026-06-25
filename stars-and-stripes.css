@@ -602,6 +602,17 @@ footer {
     pointer-events: none;
 }
 
+/* Music Player */
+
+.music-player {
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    width: 260px;
+    z-index: 200;
+
+    opacity: 0.85;
+}
 
 /* Mobile */
 
@@ -672,58 +683,4 @@ footer {
   .bg-video {
     animation: none;
   }
-}
-/* ===========================
-   Welcome Screen
-=========================== */
-
-#welcome-screen {
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(
-        rgba(0, 0, 0, .92),
-        rgba(0, 40, 104, .92)
-    );
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    cursor: pointer;
-    transition: opacity .8s ease;
-}
-
-.welcome-content {
-    text-align: center;
-    color: white;
-    animation: pulseWelcome 2s infinite;
-}
-
-.welcome-content h1 {
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    color: gold;
-    margin-bottom: 20px;
-    text-shadow: 0 0 20px rgba(255,215,0,.6);
-}
-
-.welcome-content p {
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-    color: white;
-}
-
-@keyframes pulseWelcome {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-}
-
-#welcome-screen.hidden {
-    opacity: 0;
-    pointer-events: none;
 }
