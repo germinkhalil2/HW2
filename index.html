@@ -8,6 +8,44 @@
 </head>
 <body>
 
+  <div id="welcome-screen">
+    <div class="welcome-content">
+        <h1>🇺🇸 Happy 4th America 🇺🇸</h1>
+        <p>Click anywhere to begin the celebration</p>
+    </div>
+</div>
+
+  <audio id="bgMusic" loop>
+    <source src="assets/music/happy_bday_usa.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const welcome = document.getElementById("welcome-screen");
+const music = document.getElementById("bgMusic");
+
+welcome.addEventListener("click", () => {
+
+    music.play();
+
+    welcome.classList.add("hidden");
+
+    setTimeout(() => {
+        welcome.remove();
+    }, 800);
+
+});
+
+</script>
+<script>
+window.addEventListener("load", () => {
+    document.body.addEventListener("click", () => {
+        const music = document.getElementById("bgMusic");
+        music.play();
+    }, { once: true });
+});
+</script>
+
   <header class="top-bar">
     <a href="#page1" class="logo">★ Stars & Stripes Canvas</a>
 
@@ -77,10 +115,11 @@
       <div class="scene-title right-title">
         <span>03</span>
         <h1>United We Stand</h1>
+        <a href="#page1">Restart ★</a>
       </div>
 
       <footer>
-        Built with HTML & CSS 
+        Built with HTML & CSS only
       </footer>
     </section>
 
