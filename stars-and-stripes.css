@@ -140,27 +140,6 @@ nav a:focus {
   text-transform: uppercase;
 }
 
-.scene-title a {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.85rem 1.3rem;
-  color: var(--white);
-  background: rgba(191, 10, 48, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: 0.3s;
-}
-
-.scene-title a:hover,
-.scene-title a:focus {
-  transform: translateY(-5px) scale(1.05);
-  background: var(--star-gold);
-  color: #111;
-  outline: 3px solid var(--white);
-}
-
 .left-title {
   left: 5%;
   bottom: 18%;
@@ -185,22 +164,6 @@ nav a:focus {
   position: absolute;
   inset: 0;
   z-index: 5;
-  background-image:
-    radial-gradient(circle, white 1px, transparent 2px),
-    radial-gradient(circle, var(--star-gold) 1px, transparent 2px);
-  background-size: 90px 90px, 145px 145px;
-  opacity: 0.45;
-  animation: twinkle 3s infinite alternate;
-}
-
-@keyframes twinkle {
-  from {
-    opacity: 0.2;
-  }
-
-  to {
-    opacity: 0.8;
-  }
 }
 
 /* Smoke */
@@ -252,23 +215,25 @@ nav a:focus {
   bottom: 28%;
   width: 100%;
   height: 210px;
-  background:
-    linear-gradient(to top, #05060d 65%, transparent 65%),
-    repeating-linear-gradient(
-      to right,
-      #0b1024 0 45px,
-      #172145 45px 80px,
-      #070b1c 80px 125px
-    );
-}
-
-.skyline::after {
-  content: "";
-  position: absolute;
-  inset: 25px 0 0;
-  background-image: radial-gradient(circle, var(--star-gold) 2px, transparent 3px);
-  background-size: 38px 34px;
-  opacity: 0.6;
+  background-color: #070b1c;
+  /* window lights — two offset grids baked into the same element,
+     so they only ever show up inside the building shapes below */
+  background-image:
+    radial-gradient(circle 1.5px at center, var(--star-gold) 95%, transparent 100%),
+    radial-gradient(circle 1.5px at center, var(--star-gold) 95%, transparent 100%);
+  background-size: 30px 24px, 19px 32px;
+  background-position: 6px 10px, 14px 4px;
+  background-repeat: repeat;
+  opacity: 0.9;
+  /* jagged rooftops — this is what actually makes it read as a skyline
+     instead of a rectangle. No more flat top edge, no more hard line. */
+  clip-path: polygon(
+    0% 100%, 0% 55%, 4% 55%, 4% 30%, 9% 30%, 9% 68%, 15% 68%, 15% 15%,
+    21% 15%, 21% 50%, 27% 50%, 27% 25%, 33% 25%, 33% 72%, 40% 72%, 40% 40%,
+    46% 40%, 46% 60%, 52% 60%, 52% 20%, 58% 20%, 58% 48%, 64% 48%, 64% 10%,
+    70% 10%, 70% 55%, 76% 55%, 76% 35%, 83% 35%, 83% 65%, 89% 65%, 89% 45%,
+    95% 45%, 95% 70%, 100% 70%, 100% 100%
+  );
 }
 
 /* Harbor water */
@@ -389,15 +354,6 @@ nav a:focus {
     radial-gradient(circle at 68% 64%, #000 0 12px, transparent 13px),
     radial-gradient(circle at 79% 70%, #000 0 14px, transparent 15px),
     radial-gradient(circle at 90% 62%, #000 0 11px, transparent 12px);
-}
-
-.crowd::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 75px;
-  background: linear-gradient(to top, #000 0 70%, transparent);
 }
 
 .dancing {
